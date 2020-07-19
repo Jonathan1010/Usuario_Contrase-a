@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link href="Estilos.css" rel ="stylesheet"></link>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <p class="titulo"> Inicio de Sesion </p>
+     
+        <h:form>        
+            <span class="ui-float-label"> 
+            <p:growl showDetail="true" sticky="true" />
+            
+            <p class="Obligatorio">
+            <p:outputLabel value="Obligatorio*"/><br>
+            </br>
+            <p class="usuario">
+            <p:outputLabel for="txtUsuario" value="Usuario" /></p>
+            <p:inputText id="txtUsuario" value="#{login.usuario}" required="true" />
+            <p:message for="txtUsuario"/>
+            </p>
+            </span>
+            <span class="ui-float-label">
+                <br></br>
+                
+                <p class="contrasena">
+                <p:outputLabel for="txtcontraseña" value="Contrasena" /></p>
+                <p:password id="txtcontraseña" value="#{login.contraseña}" required="true" feedback="true"
+                    promptLabel="Escriba su contraseña" weakLabel="Baja"
+                    goodLabel="Buena" strongLabel="Muy Buena" />
+                <p:message for="txtcontraseña"/>
+            </span><br>
+            </br>
+            <a class="boton">  <p:commandButton value="Ingresar" action="#{login.ingresar}" update="@form" /> </a>
+        </h:form>  
+    </h:body>
+</html>
